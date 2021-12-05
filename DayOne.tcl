@@ -11,3 +11,13 @@ for {set i 1} {$i < $length} {incr i} {
 }
 
 puts "Increased $increases times."
+
+set wincreases 0
+
+for {set i 3} {$i < $length} {incr i} {
+  if {[lindex $depths $i] > [lindex $depths [expr $i - 3]]} {
+    incr wincreases
+  }
+}
+
+puts "Sliding 3-window increased $wincreases times."
